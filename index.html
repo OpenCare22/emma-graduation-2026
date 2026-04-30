@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emma — Class of 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ===== Page 1 specific ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 0;
+  overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 0;
+  min-height: calc(100vh - 70px);
+}
+.hero-image {
+  position: relative;
+  background: var(--blush);
+}
+.hero-image .ph {
+  position: absolute; inset: 0;
+}
+.hero-image .corner-meta {
+  position: absolute; left: 28px; bottom: 28px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(42,39,36,0.65);
+  background: rgba(245,240,232,0.78);
+  padding: 8px 12px;
+}
+.hero-text {
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+  padding: 80px 80px 56px;
+  position: relative;
+}
+.hero-tag {
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--sans);
+  font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.hero-tag .rule { width: 38px; height: 1px; background: var(--sage-deep); }
+
+.hero h1 {
+  font-size: clamp(96px, 13vw, 220px);
+  line-height: 0.86;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  margin: 18px 0 28px;
+}
+.hero h1 .em {
+  font-style: italic;
+  color: var(--sage-deep);
+  font-weight: 300;
+}
+
+.hero-sub {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.hero-sub .dotsep { display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--sage-deep); margin: 0 14px; vertical-align: middle; }
+
+.hero-foot {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 24px;
+  margin-top: 48px;
+}
+.hero-foot .blurb {
+  max-width: 360px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.hero-folio {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-align: right;
+}
+.hero-folio div + div { margin-top: 4px; }
+
+@media (max-width: 980px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-image { min-height: 70vh; }
+  .hero-text { padding: 56px 28px 40px; }
+  .hero h1 { font-size: clamp(80px, 22vw, 140px); }
+}
+
+/* ===== Invitation block ===== */
+.invitation {
+  padding: 180px 0 120px;
+  text-align: center;
+  position: relative;
+}
+.invite-card {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 80px 56px;
+  position: relative;
+  background:
+    linear-gradient(var(--cream), var(--cream)),
+    var(--cream);
+}
+.invite-card::before, .invite-card::after {
+  content: "";
+  position: absolute; left: 50%; transform: translateX(-50%);
+  width: 80px; height: 1px;
+  background: var(--sage-deep);
+}
+.invite-card::before { top: 28px; }
+.invite-card::after  { bottom: 28px; }
+.invite-eyebrow {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--sage-deep);
+  margin-bottom: 22px;
+}
+.invite-line-1 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.18;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+.invite-line-1 .em { font-style: italic; color: var(--sage-deep); font-weight: 400; }
+.invite-line-2 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(20px, 2.4vw, 26px);
+  color: var(--ink-soft);
+  margin: 0 0 38px;
+}
+.invite-divider {
+  width: 1px; height: 44px;
+  background: var(--sage-deep);
+  margin: 0 auto 30px;
+}
+.invite-when {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.8vw, 30px);
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+.invite-when .num { font-style: italic; color: var(--sage-deep); }
+.invite-time {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 30px;
+}
+.invite-where {
+  font-family: var(--serif);
+  font-size: 20px;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-bottom: 6px;
+}
+.invite-where strong {
+  font-style: normal;
+  font-weight: 500;
+  color: var(--ink);
+}
+.invite-amenities {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-top: 28px;
+}
+.invite-amenities .sep { color: var(--sage-deep); margin: 0 10px; }
+
+.invite-joint {
+  margin-top: 64px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-mute);
+  letter-spacing: 0.02em;
+}
+.invite-joint .pin { color: var(--sage-deep); }
+
+@media (max-width: 720px) {
+  .invitation { padding: 110px 0 80px; }
+  .invite-card { padding: 64px 24px; }
+}
+
+/* ===== Music section ===== */
+.music {
+  padding: 80px 0;
+  border-top: 1px solid var(--sage-line);
+  border-bottom: 1px solid var(--sage-line);
+  background: linear-gradient(180deg, transparent 0%, rgba(184,197,166,0.06) 50%, transparent 100%);
+}
+.music-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.music-image .ratio { width: 100%; }
+.music-text .eyebrow { margin-bottom: 18px; display: inline-flex; align-items: center; gap: 12px; }
+.music-text .eyebrow .rule { width: 32px; height: 1px; background: var(--sage-deep); display: inline-block; }
+.music-title {
+  font-family: var(--serif);
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.05;
+  margin: 0 0 22px;
+}
+.music-title .em { font-style: italic; color: var(--sage-deep); }
+.music-caption {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 460px;
+}
+.music-credit {
+  margin-top: 24px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+@media (max-width: 880px) {
+  .music-inner { grid-template-columns: 1fr; gap: 36px; padding: 0 24px; }
+}
+
+/* ===== Scroll cue band ===== */
+.cue-band {
+  display: flex; justify-content: center;
+  padding: 64px 0 24px;
+}
+</style>
+</head>
+<body>
+
+<header data-nav="home"></header>
+
+<!-- ============== HERO ============== -->
+<section class="hero" data-screen-label="01 Home">
+  <div class="hero-grid">
+    <div class="hero-image">
+      <!-- PHOTO: replace the div below with:
+           <img src="images/portrait-emma.jpg" alt="Emma – portrait"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+      -->
+      <div class="ph blush has-frame">
+        <div class="ph-label">portrait · Emma · full bleed</div>
+      </div>
+      <!-- EDIT: corner label (bottom-left of portrait) -->
+      <div class="corner-meta">№ 01 — A portrait of the graduate</div>
+    </div>
+    <div class="hero-text">
+      <div>
+        <!-- EDIT: tagline (small text above name) -->
+        <div class="hero-tag"><span class="rule"></span> Class of Twenty Twenty-Six</div>
+        <h1>Em<span class="em">m</span>a</h1>
+        <!-- EDIT: subtitle below name -->
+        <div class="hero-sub">A graduation keepsake <span class="dotsep"></span> Spring 2026</div>
+      </div>
+      <div class="hero-foot reveal">
+        <!-- EDIT: blurb paragraph (italic text bottom-left) -->
+        <p class="blurb">A small corner of the internet for the people who love her — gathered to mark a beginning that has been a long time coming.</p>
+        <div class="hero-folio">
+          <!-- EDIT: folio lines (bottom-right metadata) -->
+          <div>Volume One</div>
+          <div>Issue · MMXXVI</div>
+          <div>Edited with love</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== INVITATION ============== -->
+<section class="invitation" id="invitation">
+  <div class="invite-card reveal">
+    <!-- EDIT: eyebrow (small caps above heading) -->
+    <div class="invite-eyebrow">You are warmly invited</div>
+    <!-- EDIT: heading line 1 -->
+    <h2 class="invite-line-1">Come and celebrate <span class="em">Emma's</span> graduation</h2>
+    <!-- EDIT: heading line 2 (italic subtitle) -->
+    <p class="invite-line-2">at an after-graduation garden party</p>
+    <div class="invite-divider"></div>
+    <!-- EDIT: date -->
+    <div class="invite-when">Saturday, the <span class="num">30<sup style="font-size:0.5em">th</sup></span> of May</div>
+    <!-- EDIT: time -->
+    <div class="invite-time">Three o'clock <span style="color:var(--sage-deep)">·</span> in the afternoon</div>
+    <!-- EDIT: address line 1 (street) -->
+    <div class="invite-where"><strong>Pozarnicka 441</strong></div>
+    <!-- EDIT: address line 2 (town/area) -->
+    <div class="invite-where">Nebusice</div>
+    <!-- EDIT: amenities (separated by ·) -->
+    <div class="invite-amenities">Food <span class="sep">·</span> Drinks <span class="sep">·</span> Music until late</div>
+  </div>
+  <!-- EDIT: joint celebration note (italic text below card) -->
+  <p class="invite-joint reveal">A joint celebration with <span class="pin">·</span> Emma Clara <span class="pin">·</span></p>
+</section>
+
+<!-- ============== MUSIC BY ============== -->
+<section class="music" id="music">
+  <div class="music-inner">
+    <div class="music-image reveal">
+      <div class="ratio r-3-2">
+        <!-- PHOTO: replace the div below with:
+             <img src="images/beat-and-shake-duo.jpg" alt="Beat &amp; Shake Duo"
+                  style="width:100%;height:100%;object-fit:cover">
+        -->
+        <div class="ph cream has-frame">
+          <div class="ph-label">landscape · Beat &amp; Shake Duo</div>
+        </div>
+      </div>
+    </div>
+    <div class="music-text reveal delay-1">
+      <!-- EDIT: eyebrow above music heading -->
+      <div class="eyebrow"><span class="rule"></span> Music by</div>
+      <!-- EDIT: band/performer name -->
+      <h3 class="music-title">Beat <span class="em">&amp;</span> Shake Duo</h3>
+      <!-- EDIT: description of the performers -->
+      <p class="music-caption">Old family friends, longtime collaborators of late summer evenings — spinning the kind of records that pull aunts onto the dance floor and keep the garden lit until the candles burn low.</p>
+      <!-- EDIT: set time/location note -->
+      <div class="music-credit">Set begins at sundown · Garden stage</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SCROLL CUE ============== -->
+<div class="cue-band">
+  <a class="scroll-cue" href="memory-lane.html" aria-label="Continue to Memory Lane">
+    <span>Continue · Memory Lane</span>
+    <span class="line"></span>
+  </a>
+</div>
+
+<footer data-footer></footer>
+
+<script src="shared.js"></script>
+</body>
+</html>
