@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wishes Wall — Emma 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.page-head {
+  padding: 120px 0 60px;
+  text-align: center;
+}
+.page-head .eyebrow { margin-bottom: 22px; }
+.page-head h1 {
+  font-size: clamp(64px, 9vw, 132px);
+  letter-spacing: -0.015em;
+  line-height: 0.95;
+}
+.page-head h1 .em { font-style: italic; color: var(--sage-deep); }
+.page-head .lede {
+  max-width: 540px; margin: 28px auto 0;
+  font-family: var(--serif); font-style: italic;
+  font-size: 20px; line-height: 1.55; color: var(--ink-soft);
+}
+
+.wall-wrap {
+  position: relative;
+  padding: 80px 0 140px;
+  overflow: hidden;
+}
+
+/* String + lights row */
+.string-row {
+  position: relative;
+  width: 100%;
+  height: 14px;
+  pointer-events: none;
+}
+.string-row svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.lights {
+  position: absolute; inset: 0;
+  pointer-events: none;
+}
+.light {
+  position: absolute;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #FFE9B0;
+  box-shadow:
+    0 0 8px 2px rgba(255, 220, 140, 0.7),
+    0 0 18px 4px rgba(255, 200, 110, 0.35);
+  animation: twinkle 3.6s ease-in-out infinite;
+}
+.light.b { background: #FFD7B5; box-shadow: 0 0 8px 2px rgba(255,200,160,0.65), 0 0 16px 4px rgba(255,180,140,0.3); }
+.light.c { background: #FFF1D1; box-shadow: 0 0 9px 2px rgba(255,235,180,0.65), 0 0 18px 5px rgba(255,220,160,0.28); }
+@keyframes twinkle {
+  0%,100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+.wall {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 60px 36px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 56px 32px;
+  align-items: start;
+}
+.wall::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at top, rgba(244,217,208,0.15), transparent 60%);
+  pointer-events: none;
+}
+
+.polaroid {
+  position: relative;
+  background: #FBF8F2;
+  padding: 14px 14px 22px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.9) inset,
+    0 14px 30px -16px rgba(42,39,36,0.35),
+    0 4px 10px -6px rgba(42,39,36,0.18);
+  transform-origin: top center;
+  transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s ease, filter .5s ease;
+  will-change: transform;
+}
+.polaroid::before {
+  content: "";
+  position: absolute;
+  top: -10px; left: 50%;
+  width: 56px; height: 18px;
+  background: rgba(184, 197, 166, 0.45);
+  transform: translateX(-50%) rotate(-3deg);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset;
+}
+.polaroid:nth-child(2n)::before {
+  background: rgba(244, 217, 208, 0.6);
+  transform: translateX(-50%) rotate(4deg);
+}
+.polaroid:nth-child(3n)::before {
+  background: rgba(237, 230, 218, 0.85);
+  transform: translateX(-40%) rotate(-6deg);
+}
+
+.polaroid .ratio { width: 100%; }
+.polaroid .ph { background-color: var(--blush); }
+.polaroid:nth-child(3n) .ph { background-color: var(--sage); }
+.polaroid:nth-child(4n) .ph { background-color: var(--cream-deep); }
+.polaroid:nth-child(5n) .ph { background-color: var(--blush-deep); }
+
+.polaroid .msg {
+  font-family: var(--hand);
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-top: 16px;
+  padding: 0 6px;
+  min-height: 64px;
+}
+.polaroid .from {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-mute);
+  margin-top: 10px;
+  padding: 0 6px;
+  display: flex; align-items: center; gap: 8px;
+}
+.polaroid .from::before {
+  content: ""; display: inline-block;
+  width: 14px; height: 1px; background: var(--sage-deep);
+}
+
+/* scattered angles */
+.polaroid:nth-child(8n+1) { transform: rotate(-3.2deg) translateY(6px); }
+.polaroid:nth-child(8n+2) { transform: rotate(2.4deg) translateY(-4px); }
+.polaroid:nth-child(8n+3) { transform: rotate(-1.6deg) translateY(14px); }
+.polaroid:nth-child(8n+4) { transform: rotate(3.6deg) translateY(0); }
+.polaroid:nth-child(8n+5) { transform: rotate(-2.2deg) translateY(-8px); }
+.polaroid:nth-child(8n+6) { transform: rotate(1.2deg) translateY(8px); }
+.polaroid:nth-child(8n+7) { transform: rotate(-3.8deg) translateY(2px); }
+.polaroid:nth-child(8n)   { transform: rotate(2.8deg) translateY(-6px); }
+
+.polaroid:hover {
+  transform: rotate(0deg) translateY(-10px) scale(1.03);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.9) inset,
+    0 30px 50px -18px rgba(42,39,36,0.45),
+    0 10px 20px -10px rgba(42,39,36,0.25);
+  filter: brightness(1.04);
+  z-index: 5;
+}
+
+@media (max-width: 1080px) {
+  .wall { grid-template-columns: repeat(3, 1fr); gap: 48px 24px; }
+}
+@media (max-width: 760px) {
+  .wall { grid-template-columns: repeat(2, 1fr); gap: 44px 18px; padding: 36px 18px; }
+  .polaroid .msg { font-size: 19px; }
+}
+@media (max-width: 440px) {
+  .wall { grid-template-columns: 1fr; }
+}
+
+/* Closing note */
+.wall-foot {
+  text-align: center;
+  margin: 80px auto 0;
+  max-width: 520px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+.wall-foot .rule { width: 56px; height: 1px; background: var(--sage-deep); margin: 22px auto 0; }
+</style>
+</head>
+<body>
+
+<header data-nav="wishes"></header>
+
+<section class="page-head" data-screen-label="03 Wishes Wall">
+  <!-- EDIT: chapter eyebrow -->
+  <div class="eyebrow">Chapter Three · From everyone</div>
+  <h1>Wishes <span class="em">Wall</span></h1>
+  <!-- EDIT: lede paragraph -->
+  <p class="lede">A handful of small notes, pinned up in the order they came in. Read them slowly — they are mostly told you so's, dressed up nicely.</p>
+</section>
+
+<div class="wall-wrap">
+
+  <!-- top string with lights -->
+  <div class="string-row" id="topString" aria-hidden="true">
+    <svg viewBox="0 0 1200 14" preserveAspectRatio="none">
+      <path d="M0 4 C 200 14, 400 0, 600 8 S 1000 14, 1200 4" fill="none" stroke="#5C5852" stroke-width="0.6" opacity="0.55"/>
+    </svg>
+    <div class="lights" id="topLights"></div>
+  </div>
+
+  <div class="wall" id="wall">
+    <!-- polaroids generated by JS below -->
+  </div>
+
+  <!-- EDIT: closing note below the polaroid wall -->
+  <p class="wall-foot reveal">
+    Every wish here is a small promise — that the people who wrote them are still right where she left them, ready to hear how it all goes.
+    <span class="rule"></span>
+  </p>
+</div>
+
+<div class="cue-band">
+  <a class="scroll-cue" href="letters.html" aria-label="Continue to Letters">
+    <span>Continue · Letters from Family</span>
+    <span class="line"></span>
+  </a>
+</div>
+
+<footer data-footer></footer>
+
+<script src="shared.js"></script>
+<script>
+// EDIT: add wishes here — one object per polaroid card.
+// Fields:
+//   from  — name shown at bottom of card (e.g. "Mum")
+//   rel   — relationship label shown in italics (e.g. "your mother")
+//   msg   — wish text; use \n for line breaks within the message
+//   photo — (optional) path to a real photo, e.g. "images/wish-mum.jpg"
+//           When set, shows the photo instead of the coloured placeholder.
+//           Leave the field out (or set to "") to keep the placeholder.
+const wishes = [
+  { from: "Mum",          rel: "your mother",           msg: "Be brave and call often.\nThe world is wider than your phone screen — go and see it." },
+  { from: "Dad",          rel: "your father",           msg: "Drive carefully. Think slowly. And remember: nothing important is ever decided after midnight." },
+  { from: "Grandma Eva",  rel: "your grandmother",      msg: "I am so proud I could burst.\nEat properly. Wear a coat. I love you." },
+  { from: "Uncle Tomáš",  rel: "your uncle",            msg: "Whatever you choose, choose it twice.\nOnce because you should, once because you want to." },
+  { from: "Aunt Petra",   rel: "your aunt",             msg: "There is a stubborn, magnificent young woman in there. Don't ever lose her." },
+  { from: "Lukáš",        rel: "your brother",          msg: "Don't read this one out loud.\nYou were always my favourite. Don't tell Mum." },
+  { from: "Jana",         rel: "your best friend",      msg: "Eighteen years of you and I'm still not bored.\nForever roommates, eventually." },
+  { from: "Mr. Havel",    rel: "your history teacher",  msg: "You wrote the best essay I read this decade.\nKeep writing. The world needs people who notice." },
+  { from: "Klára",        rel: "your godmother",        msg: "You are exactly the kind of person we hoped you'd become — and several kinds we never thought of." },
+  { from: "Beat & Shake", rel: "the duo",               msg: "We've been saving a song for tonight.\nYou'll know it when it plays." },
+  { from: "Marek",        rel: "football coach",        msg: "Number eleven forever.\nBe the same kind of teammate to the world." },
+  { from: "Sofia",        rel: "host sister, Lisbon",   msg: "A whole sea between us and still — minha irmã, sempre." },
+  { from: "Ondra",        rel: "your cousin",           msg: "Save me a slice of cake.\nAnd come visit. Brno is not that far, you know." },
+  { from: "Babi & Děda",  rel: "your grandparents",     msg: "We will be in the garden, in the same chairs, whenever you need us." },
+  { from: "The dog",      rel: "Bagel",                 msg: "Woof.\n(translation: please come back, the couch is not the same)" },
+];
+
+const wall = document.getElementById('wall');
+wishes.forEach((w, i) => {
+  const el = document.createElement('div');
+  el.className = 'polaroid reveal';
+  el.style.transitionDelay = (i % 4) * 60 + 'ms';
+  const photoSlot = w.photo
+    ? `<img src="${w.photo}" alt="${w.from}" style="width:100%;height:100%;object-fit:cover">`
+    : `<div class="ph has-frame"><div class="ph-label">photo · ${w.from.toLowerCase()}</div></div>`;
+  el.innerHTML = `
+    <div class="ratio r-1-1">${photoSlot}</div>
+    <div class="msg">${w.msg.replace(/\n/g, '<br>')}</div>
+    <div class="from">${w.from} <span style="margin:0 6px;color:var(--sage-deep)">·</span> <span class="italic-serif" style="font-size:13px">${w.rel}</span></div>
+  `;
+  wall.appendChild(el);
+});
+
+// Fairy lights
+function makeLights(host, count) {
+  for (let i = 0; i < count; i++) {
+    const l = document.createElement('span');
+    l.className = 'light' + (i % 3 === 1 ? ' b' : (i % 3 === 2 ? ' c' : ''));
+    l.style.left = (i + 0.5) * (100 / count) + '%';
+    l.style.top = (3 + Math.sin(i * 0.9) * 4) + 'px';
+    l.style.animationDelay = (i * 0.27 % 3) + 's';
+    host.appendChild(l);
+  }
+}
+makeLights(document.getElementById('topLights'), 28);
+
+// Reveal newly added polaroids
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
+  }, { rootMargin: '-6% 0px -6% 0px', threshold: 0.05 });
+  document.querySelectorAll('.polaroid.reveal').forEach(el => io.observe(el));
+}
+</script>
+</body>
+</html>
