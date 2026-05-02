@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Letters from Family — Emma 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.page-head {
+  padding: 120px 0 80px;
+  text-align: center;
+}
+.page-head .eyebrow { margin-bottom: 22px; }
+.page-head h1 {
+  font-size: clamp(64px, 9vw, 132px);
+  letter-spacing: -0.015em;
+  line-height: 0.95;
+}
+.page-head h1 .em { font-style: italic; color: var(--sage-deep); }
+.page-head .lede {
+  max-width: 540px; margin: 28px auto 0;
+  font-family: var(--serif); font-style: italic;
+  font-size: 20px; line-height: 1.55; color: var(--ink-soft);
+}
+
+.letters {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 40px 40px 80px;
+}
+
+.letter {
+  padding: 80px 0 100px;
+  position: relative;
+}
+.letter + .letter {
+  border-top: 1px solid var(--sage-line);
+}
+
+.letter-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+.letter-head .from {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--ink-mute);
+  margin-bottom: 12px;
+}
+.letter-head h2 {
+  font-family: var(--serif);
+  font-size: clamp(40px, 5vw, 68px);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.letter-head h2 .em { font-style: italic; color: var(--sage-deep); }
+.letter-head .meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.letter-body {
+  max-width: 56ch;
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.65;
+  color: var(--ink);
+}
+.letter-body p {
+  margin: 0 0 1.1em;
+  color: var(--ink);
+}
+.letter-body .first::first-letter {
+  font-family: var(--serif);
+  font-size: 5em;
+  line-height: 0.85;
+  float: left;
+  margin: 6px 14px 0 -2px;
+  color: var(--sage-deep);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.letter-aside {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: start;
+  margin-top: 48px;
+}
+.letter-aside .photo .ratio { width: 100%; }
+.letter-aside .signoff {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.letter-aside .signoff .name {
+  font-family: var(--hand);
+  font-size: 38px;
+  font-style: normal;
+  color: var(--ink);
+  display: block;
+  margin-top: 14px;
+  line-height: 1;
+}
+.letter-aside .signoff .meta {
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+@media (max-width: 760px) {
+  .letter-head { grid-template-columns: 1fr; }
+  .letter-head .meta { text-align: left; }
+  .letter-aside { grid-template-columns: 1fr; }
+  .letter-body { font-size: 18px; }
+}
+
+/* Variation: photo at top instead of side */
+.letter.photo-top .letter-aside { display: none; }
+.letter.photo-top .top-photo {
+  margin: 0 auto 56px;
+  max-width: 560px;
+}
+.letter.photo-top .top-photo .ratio { width: 100%; }
+
+/* Closing */
+.letters-foot {
+  text-align: center;
+  padding: 60px 24px 40px;
+}
+.letters-foot .rule {
+  width: 56px; height: 1px; background: var(--sage-deep);
+  margin: 0 auto 22px;
+}
+.letters-foot p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--ink-soft);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+</style>
+</head>
+<body>
+
+<header data-nav="letters"></header>
+
+<section class="page-head" data-screen-label="04 Letters from Family">
+  <!-- EDIT: chapter eyebrow -->
+  <div class="eyebrow">Chapter Four · Long form</div>
+  <h1>Letters from <span class="em">family</span></h1>
+  <!-- EDIT: lede paragraph -->
+  <p class="lede">Four letters, written quietly over the spring. To be read once now, and once again on a harder day.</p>
+</section>
+
+<div class="letters">
+
+  <!-- ===== Letter 1: Dad ===== -->
+  <article class="letter reveal">
+    <div class="letter-head">
+      <div>
+        <!-- EDIT: sender name -->
+        <div class="from">From Dad</div>
+        <!-- EDIT: letter title -->
+        <h2>On <span class="em">paying attention</span></h2>
+      </div>
+      <!-- EDIT: letter number and date -->
+      <div class="meta">Letter · I &nbsp;·&nbsp; Spring 2026</div>
+    </div>
+    <!-- EDIT: letter body — edit each <p> paragraph separately -->
+    <div class="letter-body">
+      <p class="first">Emma — there is a thing your mother and I have been trying to say to you for about eighteen years now, in a hundred small ways, and I am going to try to say it once more, plainly, while I have you sitting still.</p>
+      <p>Pay attention. Not to the loud things; the loud things are easy. Pay attention to who is quiet at the dinner table, and why. To the way the light falls in the kitchen at four o'clock in October. To the moment in a conversation when someone is about to say something true and is deciding whether you can be trusted with it.</p>
+      <p>Most of what makes a life worth living, I have come to understand, is not produced. It is noticed. The world is generous with people who notice it. It rewards them with weather, with strangers, with afternoons that don't make it onto any calendar but which they remember for forty years.</p>
+      <p>You are, and have always been, a noticer. Don't let anyone train it out of you. Not professors, not employers, not boys, not the internet. Keep your eyes the way they are.</p>
+      <p>I love you. I am proud of you. Drive carefully and call your mother.</p>
+    </div>
+    <div class="letter-aside">
+      <div class="photo">
+        <div class="ratio r-4-5">
+          <!-- PHOTO: replace the div below with:
+               <img src="images/letters-dad-emma.jpg" alt="Dad and Emma – airport"
+                    style="width:100%;height:100%;object-fit:cover">
+          -->
+          <div class="ph cream has-frame"><div class="ph-label">photo · dad &amp; emma · airport</div></div>
+        </div>
+      </div>
+      <div class="signoff">
+        <!-- EDIT: signoff line and name -->
+        With everything,
+        <span class="name">— Dad</span>
+        <!-- EDIT: written location and date -->
+        <div class="meta">Written at the kitchen table · April</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===== Letter 2: Mum (photo at top) ===== -->
+  <article class="letter photo-top reveal">
+    <div class="top-photo">
+      <div class="ratio r-3-2">
+        <!-- PHOTO: replace the div below with:
+             <img src="images/letters-mum-emma.jpg" alt="Mum and Emma – the morning of graduation"
+                  style="width:100%;height:100%;object-fit:cover">
+        -->
+        <div class="ph blush has-frame"><div class="ph-label">photo · mum &amp; emma · the morning of</div></div>
+      </div>
+    </div>
+    <div class="letter-head">
+      <div>
+        <!-- EDIT: sender name -->
+        <div class="from">From Mum</div>
+        <!-- EDIT: letter title -->
+        <h2>The <span class="em">small mornings</span></h2>
+      </div>
+      <!-- EDIT: letter number and date -->
+      <div class="meta">Letter · II &nbsp;·&nbsp; April 2026</div>
+    </div>
+    <!-- EDIT: letter body -->
+    <div class="letter-body">
+      <p class="first">My darling girl. I wrote you a letter on the day you were born and put it in a drawer, and I have not been able to find it for a decade, so I will write you another one.</p>
+      <p>What I wanted to tell you, and still do, is that the small mornings are the ones that matter. The toast burned the same way every Tuesday. The hairbrush we fought over for six years. The lunchbox notes I stopped writing when you asked me to and then started again, smaller, when I thought you weren't looking. Those mornings are the marrow of a childhood, and they are yours now, fully — to remember in whatever shape you want.</p>
+      <p>I have spent eighteen years trying to make you brave and kind and reasonably tidy. Two out of three is a fine outcome and we will work on the tidy part by post.</p>
+      <p>Wherever you go from here, you are taking a great deal of us with you. Not as weight — as ballast. The kind that keeps a small boat upright in a strong wind. Use it. Lean on it. Come home when you need to and stay away when you don't.</p>
+      <p>I am so proud of you I can hardly stand it.</p>
+    </div>
+    <div class="letter-aside" style="display:grid">
+      <div></div>
+      <div class="signoff">
+        <!-- EDIT: signoff line and name -->
+        Your mother, always,
+        <span class="name">— Mama</span>
+        <!-- EDIT: written location and date -->
+        <div class="meta">Written in the garden · 14 April</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===== Letter 3: Grandma Eva ===== -->
+  <article class="letter reveal">
+    <div class="letter-head">
+      <div>
+        <!-- EDIT: sender name -->
+        <div class="from">From Grandma Eva</div>
+        <!-- EDIT: letter title -->
+        <h2>A <span class="em">short note</span>, with instructions</h2>
+      </div>
+      <!-- EDIT: letter number and date -->
+      <div class="meta">Letter · III &nbsp;·&nbsp; March 2026</div>
+    </div>
+    <!-- EDIT: letter body -->
+    <div class="letter-body">
+      <p class="first">Emička — I am eighty-one years old and I have learned exactly four things worth passing on. Here they are, in no particular order, so you cannot lose them.</p>
+      <p><em>One.</em> Eat something warm in the morning, even when you do not want to. The body is a small animal and it needs to be coaxed.</p>
+      <p><em>Two.</em> Marry no one in a hurry. The good ones do not mind waiting; the bad ones reveal themselves if you give them long enough.</p>
+      <p><em>Three.</em> Learn one piece of music well enough to play it from memory. There will be a day, far from now, when you will be glad to have it in your hands.</p>
+      <p><em>Four.</em> Call your grandmother. She is, as a rule, sitting by the phone.</p>
+      <p>That is everything I know. I love you to the moon and the chickens.</p>
+    </div>
+    <div class="letter-aside">
+      <div class="photo">
+        <div class="ratio r-1-1">
+          <!-- PHOTO: replace the div below with:
+               <img src="images/letters-grandma-kitchen.jpg" alt="Grandma Eva's kitchen, Sunday"
+                    style="width:100%;height:100%;object-fit:cover">
+          -->
+          <div class="ph sage has-frame"><div class="ph-label">photo · grandma's kitchen, sunday</div></div>
+        </div>
+      </div>
+      <div class="signoff">
+        <!-- EDIT: signoff line and name -->
+        Yours, always —
+        <span class="name" style="font-family:var(--hand);font-size:42px">Babička Eva</span>
+        <!-- EDIT: written location and date -->
+        <div class="meta">Signed in blue ink · with two corrections</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===== Letter 4: Lukáš ===== -->
+  <article class="letter reveal">
+    <div class="letter-head">
+      <div>
+        <!-- EDIT: sender name -->
+        <div class="from">From your brother, Lukáš</div>
+        <!-- EDIT: letter title -->
+        <h2>In <span class="em">defense</span> of the older sister</h2>
+      </div>
+      <!-- EDIT: letter number and date -->
+      <div class="meta">Letter · IV &nbsp;·&nbsp; April 2026</div>
+    </div>
+    <!-- EDIT: letter body -->
+    <div class="letter-body">
+      <p class="first">Em — a few things, since I will not say them out loud and you will not let me write them in the card.</p>
+      <p>You taught me to tie my shoes, to ride a bike, to lie convincingly to our parents about who broke the lamp, and to apologise afterwards in a way that worked. These are, in order, the four most useful skills I have, and I have you to thank for all of them.</p>
+      <p>I have spent fifteen years pretending you were annoying. You are, in fact, the best person I know. I am not going to say it again, so make a note of the date.</p>
+      <p>When you go away, the house will be too quiet, and Bagel will lie in your doorway for a week looking offended. I will tell you about it on the phone. Try not to make it weird.</p>
+      <p>Go and be brilliant. Come back for Christmas. Bring snacks.</p>
+    </div>
+    <div class="letter-aside">
+      <div class="photo">
+        <div class="ratio r-4-5">
+          <!-- PHOTO: replace the div below with:
+               <img src="images/letters-lukas-emma.jpg" alt="Lukáš and Emma – age 6 and 9"
+                    style="width:100%;height:100%;object-fit:cover">
+          -->
+          <div class="ph blush has-frame"><div class="ph-label">photo · the two of them, age 6 and 9</div></div>
+        </div>
+      </div>
+      <div class="signoff">
+        <!-- EDIT: signoff line and name -->
+        Your favourite sibling (only sibling),
+        <span class="name">— Luky</span>
+        <!-- EDIT: written location and date -->
+        <div class="meta">Written under duress · still meant it</div>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+<!-- EDIT: closing note below the four letters -->
+<div class="letters-foot reveal">
+  <div class="rule"></div>
+  <p>Four letters; eighteen years; one extraordinary girl. There will be more, in time — folded into birthday cards and slipped under doors — but these are the ones we wrote first.</p>
+</div>
+
+<div class="cue-band">
+  <a class="scroll-cue" href="whats-next.html" aria-label="Continue to What's Next">
+    <span>Continue · What's Next</span>
+    <span class="line"></span>
+  </a>
+</div>
+
+<footer data-footer></footer>
+
+<script src="shared.js"></script>
+</body>
+</html>
