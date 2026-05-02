@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memory Lane — Emma 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.page-head {
+  padding: 120px 0 80px;
+  text-align: center;
+  position: relative;
+}
+.page-head .eyebrow { margin-bottom: 22px; }
+.page-head h1 {
+  font-size: clamp(64px, 9vw, 132px);
+  letter-spacing: -0.015em;
+  line-height: 0.95;
+}
+.page-head h1 .em { font-style: italic; color: var(--sage-deep); }
+.page-head .lede {
+  max-width: 540px; margin: 28px auto 0;
+  font-family: var(--serif); font-style: italic;
+  font-size: 20px; line-height: 1.55; color: var(--ink-soft);
+}
+
+/* === Timeline rail === */
+.timeline {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 60px 40px 120px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: var(--sage-line);
+  transform: translateX(-0.5px);
+}
+
+.year {
+  position: relative;
+  padding: 90px 0;
+}
+.year-mark {
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  top: 30px;
+  display: inline-flex; align-items: center; gap: 14px;
+  background: var(--cream);
+  padding: 10px 22px;
+  z-index: 2;
+}
+.year-mark .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--sage-deep);
+}
+.year-mark .num {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-style: italic;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+}
+
+.year-title-band {
+  text-align: center;
+  margin: 36px 0 56px;
+}
+.year-title-band .age {
+  font-family: var(--mono);
+  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 14px;
+}
+.year-title-band h2 {
+  font-size: clamp(56px, 8vw, 120px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+}
+.year-title-band h2 .em { font-style: italic; color: var(--sage-deep); }
+
+/* spread layouts — vary rhythm */
+.spread { position: relative; }
+.spread + .spread { margin-top: 60px; }
+
+.spread.full { }
+.spread.full .ratio { max-width: 1080px; margin: 0 auto; }
+.spread.full .caption { max-width: 720px; margin: 28px auto 0; text-align: center; }
+
+.spread.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.spread.split.reverse { grid-template-columns: 1fr 1fr; }
+.spread.split.reverse .img { order: 2; }
+.spread.split.reverse .text { order: 1; }
+
+.spread.duo {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 36px;
+  align-items: end;
+}
+
+.spread .vignette-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  margin: 0 0 14px;
+  color: var(--ink);
+}
+.spread .vignette-title .em { font-style: italic; color: var(--sage-deep); }
+
+.spread .meta {
+  font-family: var(--mono);
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 14px;
+}
+.spread .caption {
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 460px;
+}
+.spread .pull {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 24px;
+  line-height: 1.45;
+  color: var(--sage-deep);
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--sage-line);
+  max-width: 380px;
+}
+
+@media (max-width: 880px) {
+  .timeline::before { left: 22px; }
+  .year-mark { left: 22px; transform: none; }
+  .year-title-band { text-align: left; padding-left: 56px; }
+  .spread.split, .spread.split.reverse, .spread.duo { grid-template-columns: 1fr; gap: 24px; }
+  .spread.split.reverse .img { order: 1; }
+  .spread.split.reverse .text { order: 2; }
+  .spread.full .caption { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<header data-nav="memory"></header>
+
+<section class="page-head" data-screen-label="02 Memory Lane">
+  <!-- EDIT: chapter eyebrow -->
+  <div class="eyebrow">Chapter Two · The Years</div>
+  <h1>Memory <span class="em">Lane</span></h1>
+  <!-- EDIT: lede paragraph below heading -->
+  <p class="lede">From the year she arrived to the year she stepped out the door — eighteen seasons compressed into a quiet little walk, year by year.</p>
+</section>
+
+<div class="timeline">
+
+  <!-- 2008 -->
+  <article class="year">
+    <div class="year-mark"><span class="dot"></span><span class="num">2008</span></div>
+    <div class="year-title-band reveal">
+      <!-- EDIT: age label for this year -->
+      <div class="age">Year One · Age 0</div>
+      <!-- EDIT: year heading -->
+      <h2>The <span class="em">arrival</span></h2>
+    </div>
+    <div class="spread full reveal">
+      <div class="ratio r-16-9">
+        <!-- PHOTO: replace the div below with:
+             <img src="images/2008-first-week-home.jpg" alt="Emma – the first week home"
+                  style="width:100%;height:100%;object-fit:cover">
+        -->
+        <div class="ph blush has-frame"><div class="ph-label">portrait · the first week home</div></div>
+      </div>
+      <!-- EDIT: caption for 2008 -->
+      <p class="caption">She came home in October to a flat with too many flowers and not enough sleep. Grandma Eva insisted on knitting a yellow blanket; it is, somewhere in a box, still yellow.</p>
+    </div>
+  </article>
+
+  <!-- 2012 -->
+  <article class="year">
+    <div class="year-mark"><span class="dot"></span><span class="num">2012</span></div>
+    <div class="year-title-band reveal">
+      <!-- EDIT: age label -->
+      <div class="age">Age 4 · Pre-school</div>
+      <!-- EDIT: year heading -->
+      <h2>First day of <span class="em">school</span></h2>
+    </div>
+    <div class="spread split reveal">
+      <div class="img">
+        <div class="ratio r-4-5">
+          <!-- PHOTO: replace the div below with:
+               <img src="images/2012-backpack.jpg" alt="Emma – backpack twice her size"
+                    style="width:100%;height:100%;object-fit:cover">
+          -->
+          <div class="ph cream has-frame"><div class="ph-label">photo · backpack twice her size</div></div>
+        </div>
+      </div>
+      <div class="text">
+        <!-- EDIT: location/date metadata -->
+        <div class="meta">September · Prague</div>
+        <!-- EDIT: vignette title -->
+        <h3 class="vignette-title">A backpack twice <span class="em">her size</span></h3>
+        <!-- EDIT: caption paragraph -->
+        <p class="caption">She wore the navy uniform like it was a diplomatic post. Refused to be photographed at the gate, then turned around at the last second so we could.</p>
+        <!-- EDIT: pull quote -->
+        <p class="pull">"I'll be back at lunch — don't move."</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- 2014 -->
+  <article class="year">
+    <div class="year-mark"><span class="dot"></span><span class="num">2014</span></div>
+    <div class="year-title-band reveal">
+      <!-- EDIT: age label -->
+      <div class="age">Age 6 · Summer</div>
+      <!-- EDIT: year heading -->
+      <h2>The summer in <span class="em">Greece</span></h2>
+    </div>
+    <div class="spread duo reveal">
+      <div>
+        <div class="ratio r-3-2">
+          <!-- PHOTO: replace the div below with:
+               <img src="images/2014-greece-sea.jpg" alt="Greece – sea, salt, scraped knees"
+                    style="width:100%;height:100%;object-fit:cover">
+          -->
+          <div class="ph sage has-frame"><div class="ph-label">photo · sea, salt, scraped knees</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="ratio r-3-4">
+          <!-- PHOTO: replace the div below with:
+               <img src="images/2014-greece-icecream.jpg" alt="Greece – ice cream, evening light"
+                    style="width:100%;height:100%;object-fit:cover">
+          -->
+          <div class="ph blush has-frame"><div class="ph-label">photo · ice cream, evening light</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="spread split reverse reveal" style="margin-top: 36px">
+      <div class="img"></div>
+      <div class="text">
+        <!-- EDIT: location/date metadata -->
+        <div class="meta">Naxos · July</div>
+        <!-- EDIT: vignette title -->
+        <h3 class="vignette-title">Three weeks of <span class="em">salt and sun</span></h3>
+        <!-- EDIT: caption paragraph -->
+        <p class="caption">She learned to swim by refusing not to. Discovered watermelon, octopus, and the words for both. Came home a shade darker, a head taller, and several shells richer.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- 2016 -->
+  <article class="year">
+    <div class="year-mark"><span class="dot"></span><span class="num">2016</span></div>
+    <div class="year-title-band reveal">
+      <!-- EDIT: age label -->
+      <div class="age">Age 8 · After school</div>
+      <!-- EDIT: year heading -->
+      <h2>Joining the <span class="em">football team</span></h2>
+    </div>
+    <div class="spread split reveal">
+      <div class="text">
+        <!-- EDIT: location/date metadata -->
+        <div class="meta">Sokol · Sundays at nine</div>
+        <!-- EDIT: vignette title -->
+        <h3 class="vignette-title">Number <span class="em">eleven</span></h3>
+        <!-- EDIT: caption paragraph -->
+        <p class="caption">She was the only girl on the under-tens for one full season and politely refused to mention it. Played left wing. Scored twice. Cried once when the team lost the final, then ate three pieces of cake at the after-party.</p>
+      </div>
+      <div class="img">
+        <div class="ratio r-4-5">
+          <!-- PHOTO: replace the div below with:
+               <img src="images/2016-football.jpg" alt="Emma – muddy boots, grass stains"
+                    style="width:100%;height:100%;object-fit:cover">
+          -->
+          <div class="ph cream has-frame"><div class="ph-label">photo · muddy boots, grass stains</div></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 2018 -->
+  <article class="year">
+    <div class="year-mark"><span class="dot"></span><span class="num">2018</span></div>
+    <div class="year-title-band reveal">
+      <!-- EDIT: age label -->
+      <div class="age">Age 10 · A new instrument</div>
+      <!-- EDIT: year heading -->
+      <h2>The <span class="em">piano year</span></h2>
+    </div>
+    <div class="spread full reveal">
+      <div class="ratio r-16-9">
+        <!-- PHOTO: replace the div below with:
+             <img src="images/2018-piano.jpg" alt="Emma – upright piano, sunlight"
+                  style="width:100%;height:100%;object-fit:cover">
+        -->
+        <div class="ph cream has-frame"><div class="ph-label">photo · upright, sunlight, half a smile</div></div>
+      </div>
+      <!-- EDIT: caption for 2018 -->
+      <p class="caption">A second-hand upright arrived in May and she taught it to behave. By December she could play "Clair de Lune" with both hands, mostly in the right order, and would do so on request, then on demand.</p>
+    </div>
+  </article>
+
+  <!-- 2020 -->
+  <article class="year">
+    <div class="year-mark"><span class="dot"></span><span class="num">2020</span></div>
+    <div class="year-title-band reveal">
+      <!-- EDIT: age label -->
+      <div class="age">Age 12 · The year inside</div>
+      <!-- EDIT: year heading -->
+      <h2>A <span class="em">strange</span> spring</h2>
+    </div>
+    <div class="spread duo reveal">
+      <div>
+        <div class="ratio r-3-2">
+          <!-- PHOTO: replace the div below with:
+               <img src="images/2020-kitchen-classroom.jpg" alt="Kitchen-table classroom"
+                    style="width:100%;height:100%;object-fit:cover">
+          -->
+          <div class="ph blush has-frame"><div class="ph-label">photo · kitchen-table classroom</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="ratio r-3-4">
+          <!-- PHOTO: replace the div below with:
+               <img src="images/2020-sourdough.jpg" alt="Sourdough – attempt nine"
+                    style="width:100%;height:100%;object-fit:cover">
+          -->
+          <div class="ph sage has-frame"><div class="ph-label">photo · sourdough, attempt nine</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="spread split reverse reveal" style="margin-top: 36px">
+      <div class="img"></div>
+      <div class="text">
+        <!-- EDIT: location/date metadata -->
+        <div class="meta">March – June · home</div>
+        <!-- EDIT: vignette title -->
+        <h3 class="vignette-title">Lessons over <span class="em">a kitchen table</span></h3>
+        <!-- EDIT: caption paragraph -->
+        <p class="caption">Took up bread, gave up bread, took up bread again. Learned French verbs from a duck-themed app. Held a virtual birthday party with seventeen guests in nine countries and three time zones.</p>
+        <!-- EDIT: pull quote -->
+        <p class="pull">"I think I prefer real school, actually."</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- 2022 -->
+  <article class="year">
+    <div class="year-mark"><span class="dot"></span><span class="num">2022</span></div>
+    <div class="year-title-band reveal">
+      <!-- EDIT: age label -->
+      <div class="age">Age 14 · Beginning of high school</div>
+      <!-- EDIT: year heading -->
+      <h2>A new <span class="em">uniform</span></h2>
+    </div>
+    <div class="spread split reveal">
+      <div class="img">
+        <div class="ratio r-4-5">
+          <!-- PHOTO: replace the div below with:
+               <img src="images/2022-gymnasium.jpg" alt="Gymnasium gates – first morning"
+                    style="width:100%;height:100%;object-fit:cover">
+          -->
+          <div class="ph cream has-frame"><div class="ph-label">photo · gymnasium gates, first morning</div></div>
+        </div>
+      </div>
+      <div class="text">
+        <!-- EDIT: location/date metadata -->
+        <div class="meta">Gymnázium · September</div>
+        <!-- EDIT: vignette title -->
+        <h3 class="vignette-title">First day, second <span class="em">act</span></h3>
+        <!-- EDIT: caption paragraph -->
+        <p class="caption">She walked in twice as tall as the last time we'd dropped her at a gate. Made three friends by the second week and a fourth one by accident. Decided she liked history more than she'd planned to.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- 2024 -->
+  <article class="year">
+    <div class="year-mark"><span class="dot"></span><span class="num">2024</span></div>
+    <div class="year-title-band reveal">
+      <!-- EDIT: age label -->
+      <div class="age">Age 16 · The world widens</div>
+      <!-- EDIT: year heading -->
+      <h2>An <span class="em">exchange</span> year</h2>
+    </div>
+    <div class="spread full reveal">
+      <div class="ratio r-16-9">
+        <!-- PHOTO: replace the div below with:
+             <img src="images/2024-lisbon.jpg" alt="Lisbon balcony – late light"
+                  style="width:100%;height:100%;object-fit:cover">
+        -->
+        <div class="ph blush has-frame"><div class="ph-label">photo · Lisbon balcony, late light</div></div>
+      </div>
+      <!-- EDIT: caption for 2024 -->
+      <p class="caption">Six months in Lisbon with a host family who taught her two new languages — Portuguese, and how to order coffee with confidence. Came back with a notebook full of bus tickets and a small, unmistakable gravity.</p>
+    </div>
+  </article>
+
+  <!-- 2026 -->
+  <article class="year">
+    <div class="year-mark"><span class="dot"></span><span class="num">2026</span></div>
+    <div class="year-title-band reveal">
+      <!-- EDIT: age label -->
+      <div class="age">Age 18 · Now</div>
+      <!-- EDIT: year heading -->
+      <h2>And <span class="em">here we are</span></h2>
+    </div>
+    <div class="spread full reveal">
+      <div class="ratio r-16-9">
+        <!-- PHOTO: replace the div below with:
+             <img src="images/2026-graduation.jpg" alt="Emma – cap, gown, graduation day"
+                  style="width:100%;height:100%;object-fit:cover">
+        -->
+        <div class="ph sage has-frame"><div class="ph-label">photo · cap, gown, and the long hallway</div></div>
+      </div>
+      <!-- EDIT: caption for 2026 -->
+      <p class="caption">Eighteen years of small mornings and big nights, of sandwiches packed and concerts attended, of report cards and sprained ankles and library cards renewed. All of it, somehow, pointing here.</p>
+    </div>
+  </article>
+
+</div>
+
+<div class="cue-band">
+  <a class="scroll-cue" href="wishes.html" aria-label="Continue to Wishes">
+    <span>Continue · Wishes Wall</span>
+    <span class="line"></span>
+  </a>
+</div>
+
+<footer data-footer></footer>
+
+<script src="shared.js"></script>
+</body>
+</html>
