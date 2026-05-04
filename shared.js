@@ -1,11 +1,10 @@
 // Shared header/footer + reveal observer
 (function () {
   const PAGES = [
-    { href: "index.html",        label: "Home",      key: "home" },
-    { href: "memory-lane.html",  label: "Memory Lane", key: "memory" },
-    { href: "wishes.html",       label: "Wishes",    key: "wishes" },
-    { href: "letters.html",      label: "Letters",   key: "letters" },
-    { href: "whats-next.html",   label: "What's Next", key: "next" },
+    { href: "index.html",        label: "Home",            key: "home" },
+    { href: "memory-lane.html",  label: "Memory Lane",     key: "memory" },
+    { href: "wishes.html",       label: "Wishes",          key: "wishes" },
+    { href: "letters.html",      label: "Letters & Wishes", key: "letters" },
   ];
 
   function injectNav() {
@@ -42,8 +41,7 @@
           <a href="index.html">Home</a>
           <a href="memory-lane.html">Memory Lane</a>
           <a href="wishes.html">Wishes</a>
-          <a href="letters.html">Letters</a>
-          <a href="whats-next.html">What's Next</a>
+          <a href="letters.html">Letters & Wishes</a>
         </div>
       </div>
       <div class="footer-inner" style="margin-top:48px">
